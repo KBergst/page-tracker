@@ -59,7 +59,7 @@ RUN python3 -m venv $VIRTUALENV
 ENV PATH="$VIRTUALENV/bin:$PATH"
 
 # copy over wheel from first stage
-COPY --from=builder /home/realpython/dist/pagetracker*.whl /home/realpython
+COPY --from=builder /home/realpython/dist/page_tracker*.whl /home/realpython
 # upgrade pip n install wheel
 RUN python -m pip install --upgrade pip setuptools && \
     python -m pip install --no-cache-dir page_tracker*.whl
